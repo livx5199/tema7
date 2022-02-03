@@ -17,7 +17,15 @@
         let time = document.querySelector("#time").value;
         let udledning = 109;
         let result = time * udledning;
-        let resultat = `Ved ${time} timers flyrejse har du udledt ${result} kg CO2`;
+        let resultat
+
+        if (isNaN(result)){
+            resultat = "Dette er ikke et tal, prøv igen";
+        }else if (result <= 0){
+            resultat = "Rejsen er mindre end 0";
+        }else{
+            resultat = `Ved ${time} timers flyrejse har du udledt ${result} kg CO2`;
+        }
         console.log(resultat)
         }
     </script>
